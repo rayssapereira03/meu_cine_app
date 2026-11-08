@@ -1,0 +1,570 @@
+
+/* =========================
+   1. CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #171323;
+    color: white;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+header {
+    margin-bottom: 25px;
+}
+
+h1 {
+    color: #C4B5FD;
+    margin-bottom: 8px;
+    font-size: 30px;
+}
+
+.subtitulo {
+    color: #B9B2C9;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #C4B5FD;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   2. MENU DE ABAS
+========================= */
+
+.menu-abas {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.botao-aba {
+    flex: 1;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    background-color: #302942;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.botao-aba:hover {
+    background-color: #51416D;
+}
+
+.botao-aba.ativo {
+    background-color: #7C3AED;
+    font-weight: bold;
+}
+
+
+/* =========================
+   3. SEÇÕES DAS ABAS
+========================= */
+
+.aba {
+    display: none;
+    background-color: #211B30;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.aba h2 {
+    color: #C4B5FD;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   4. TEXTOS
+========================= */
+
+.texto-boas-vindas {
+    color: #D1CADF;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   5. CARDS DO RESUMO
+========================= */
+
+.resumo-cards {
+    display: flex;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.resumo-card {
+    flex: 1;
+    background-color: #302942;
+    padding: 25px 15px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #44365B;
+}
+
+.resumo-card h3 {
+    color: #C4B5FD;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.resumo-card p {
+    color: #B9B2C9;
+    font-size: 14px;
+}
+
+
+/* =========================
+   6. FORMULÁRIO
+========================= */
+
+#formFilme {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.grupo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.grupo-formulario label {
+    color: #DDD6FE;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+/* =========================
+   7. INPUTS, SELECTS E TEXTAREA
+========================= */
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #51416D;
+    border-radius: 8px;
+    background-color: #302942;
+    color: white;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #A78BFA;
+    box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.15);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #A69BB9;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+select {
+    cursor: pointer;
+}
+
+
+/* =========================
+   8. BOTÕES
+========================= */
+
+button {
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    transition: 0.3s;
+}
+
+button:hover {
+    filter: brightness(1.15);
+}
+
+
+/* BOTÃO ADICIONAR */
+
+.botao-adicionar {
+    padding: 13px 18px;
+    background-color: #7C3AED;
+    color: white;
+    font-weight: bold;
+}
+
+
+/* BOTÃO SALVAR */
+
+.botao-salvar {
+    padding: 14px;
+    width: 100%;
+    background-color: #7C3AED;
+    color: white;
+    font-weight: bold;
+}
+
+
+/* =========================
+   9. PESQUISA E FILTROS
+========================= */
+
+.filtros {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.filtros input {
+    flex: 2;
+    min-width: 0;
+}
+
+.filtros select {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* =========================
+   10. LISTA DE FILMES
+========================= */
+
+.lista-filmes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+
+/* CARD INDIVIDUAL */
+
+.card-filme {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #302942;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid #A78BFA;
+}
+
+.card-filme h3 {
+    color: #C4B5FD;
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.card-filme p {
+    color: #D1CADF;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+
+/* =========================
+   11. STATUS DOS FILMES
+========================= */
+
+.status-filme {
+    display: inline-block;
+    width: fit-content;
+    background-color: #51416D;
+    color: #DDD6FE;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin: 5px 0;
+}
+
+
+/* SELETOR DE STATUS DO CARD */
+
+.seletor-status {
+    max-width: 100%;
+}
+
+
+/* =========================
+   12. BOTÃO DE EXCLUIR
+========================= */
+
+.botao-excluir {
+    background-color: #BE3455;
+    color: white;
+    padding: 10px 15px;
+    align-self: flex-start;
+}
+
+.botao-excluir:hover {
+    background-color: #E11D48;
+}
+
+
+/* =========================
+   13. MENSAGEM DE LISTA VAZIA
+========================= */
+
+.mensagem-vazia {
+    color: #B9B2C9;
+    text-align: center;
+    padding: 25px;
+    background-color: #302942;
+    border-radius: 10px;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   RESPONSIVIDADE - PROJETO MEU CINE
+========================================== */
+
+
+/* ==========================================
+   1. TABLETS (601px até 992px)
+========================================== */
+
+@media (min-width: 601px) and (max-width: 992px) {
+
+    body {
+        padding: 18px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .aba {
+        padding: 22px;
+    }
+
+    .resumo-cards {
+        gap: 12px;
+    }
+
+    .resumo-card {
+        padding: 20px 10px;
+    }
+
+}
+
+
+/* ==========================================
+   2. SMARTPHONES (até 600px)
+========================================== */
+
+@media (max-width: 600px) {
+
+    /* CONFIGURAÇÕES GERAIS */
+
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    header {
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    .subtitulo {
+        font-size: 14px;
+    }
+
+
+    /* MENU DE ABAS */
+
+    .menu-abas {
+        gap: 6px;
+        margin-bottom: 18px;
+    }
+
+    .botao-aba {
+        padding: 11px 5px;
+        font-size: 13px;
+        min-width: 0;
+    }
+
+
+    /* SEÇÕES DAS ABAS */
+
+    .aba {
+        padding: 18px 14px;
+        border-radius: 12px;
+    }
+
+    .aba h2 {
+        font-size: 20px;
+    }
+
+
+    /* TEXTOS */
+
+    .texto-boas-vindas {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+
+    /* CARDS DO RESUMO */
+
+    .resumo-cards {
+        flex-direction: column;
+        gap: 12px;
+        margin: 20px 0;
+    }
+
+    .resumo-card {
+        width: 100%;
+        padding: 18px;
+    }
+
+    .resumo-card h3 {
+        font-size: 26px;
+    }
+
+
+    /* FORMULÁRIO */
+
+    #formFilme {
+        gap: 15px;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+    }
+
+
+    /* BOTÕES */
+
+    .botao-adicionar,
+    .botao-salvar {
+        width: 100%;
+    }
+
+
+    /* PESQUISA E FILTROS */
+
+    .filtros {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .filtros input,
+    .filtros select {
+        width: 100%;
+    }
+
+
+    /* CARDS DOS FILMES */
+
+    .lista-filmes {
+        gap: 12px;
+    }
+
+    .card-filme {
+        padding: 15px;
+        gap: 8px;
+    }
+
+    .card-filme h3 {
+        font-size: 17px;
+        overflow-wrap: anywhere;
+    }
+
+    .card-filme p {
+        font-size: 14px;
+    }
+
+
+    /* BOTÃO EXCLUIR */
+
+    .botao-excluir {
+        width: 100%;
+        align-self: stretch;
+        margin-top: 5px;
+    }
+
+
+    /* MENSAGEM DE LISTA VAZIA */
+
+    .mensagem-vazia {
+        padding: 18px;
+        font-size: 14px;
+    }
+
+}
+
+
+/* ==========================================
+   3. CELULARES MUITO PEQUENOS (até 380px)
+========================================== */
+
+@media (max-width: 380px) {
+
+    body {
+        padding: 8px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .aba {
+        padding: 14px 10px;
+    }
+
+    .botao-aba {
+        font-size: 11px;
+        padding: 10px 3px;
+    }
+
+    .resumo-card h3 {
+        font-size: 23px;
+    }
+
+}
