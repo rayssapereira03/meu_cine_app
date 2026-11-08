@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meu Cine</title>
+
+    <!-- Conecta o arquivo CSS -->
+    <link rel="stylesheet" href="style16.css">
+
+    <!-- Conecta o arquivo manisfest -->
+    <link rel="manifest" href="manifest.json">
+
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- =========================
+             CABEÇALHO
+        ========================== -->
+
+        <header>
+
+            <h1>🎬 Meu Cine</h1>
+
+            <p class="subtitulo">
+                Organize seus filmes e séries favoritos!
+            </p>
+
+        </header>
+
+        <!-- =========================
+             MENU DE ABAS
+        ========================== -->
+
+        <nav class="menu-abas">
+
+            <button
+                class="botao-aba ativo"
+                onclick="mostrarAba('resumo', this)">
+
+                Resumo
+
+            </button>
+
+
+            <button
+                class="botao-aba"
+                onclick="mostrarAba('lista', this)">
+
+                Minha Lista
+
+            </button>
+
+
+            <button
+                class="botao-aba"
+                onclick="mostrarAba('adicionar', this)">
+
+                Adicionar
+
+            </button>
+
+        </nav>
+
+
+        <!-- =========================
+             ABA 1: RESUMO
+        ========================== -->
+
+        <section id="resumo" class="aba">
+
+            <h2>Meu espaço de entretenimento 🍿</h2>
+
+
+            <p class="texto-boas-vindas">
+
+                Bem-vindo ao Meu Cine! Aqui você pode organizar
+                seus filmes e séries, acompanhar o que está
+                assistindo e registrar os títulos que já terminou.
+
+            </p>
+
+
+            <!-- CARDS COM OS NÚMEROS DO RESUMO -->
+
+            <div class="resumo-cards">
+
+                <div class="resumo-card">
+
+                    <h3 id="totalFilmes">0</h3>
+
+                    <p>Na minha lista</p>
+
+                </div>
+
+
+                <div class="resumo-card">
+
+                    <h3 id="totalAssistindo">0</h3>
+
+                    <p>Assistindo</p>
+
+                </div>
+
+
+                <div class="resumo-card">
+
+                    <h3 id="totalConcluidos">0</h3>
+
+                    <p>Concluídos</p>
+
+                </div>
+
+            </div>
+
+
+            <p class="texto-boas-vindas">
+
+                Já sabe o que vai assistir hoje?
+                Adicione um novo título à sua lista!
+
+            </p>
+
+
+            <button
+                class="botao-adicionar"
+                onclick="mostrarAba('adicionar', document.querySelectorAll('.botao-aba')[2])">
+
+                + Adicionar novo título
+
+            </button>
+
+        </section>
+        <!-- =========================
+             ABA 2: MINHA LISTA
+        ========================== -->
+
+        <section id="lista" class="aba">
+
+            <h2>Minha Lista de Filmes e Séries</h2>
+
+
+            <!-- PESQUISA E FILTRO -->
+
+            <div class="filtros">
+
+                <input
+                    type="text"
+                    id="pesquisa"
+                    placeholder="Pesquisar por título...">
+
+
+                <select id="filtroStatus">
+
+                    <option value="todos">
+                        Todos os status
+                    </option>
+
+                    <option value="Quero assistir">
+                        Quero assistir
+                    </option>
+
+                    <option value="Assistindo">
+                        Assistindo
+                    </option>
+
+                    <option value="Concluído">
+                        Concluído
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- LOCAL ONDE OS FILMES SERÃO EXIBIDOS -->
+
+            <div id="listaFilmes" class="lista-filmes"></div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ABA 3: ADICIONAR
+        ========================== -->
+
+        <section id="adicionar" class="aba">
+
+            <h2>Adicionar novo título 🎥</h2>
+
+
+            <form id="formFilme">
+
+
+                <!-- NOME -->
+
+                <div class="grupo-formulario">
+
+                    <label for="nome">
+                        Nome do filme ou série:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Ex: Stranger Things"
+                        required>
+
+                </div>
+
+
+
+                <!-- TIPO -->
+
+                <div class="grupo-formulario">
+
+                    <label for="tipo">
+                        Tipo:
+                    </label>
+
+                    <select id="tipo" required>
+
+                        <option value="">
+                            Selecione o tipo
+                        </option>
+
+                        <option value="Filme">
+                            Filme
+                        </option>
+
+                        <option value="Série">
+                            Série
+                        </option>
+
+                        <option value="Documentário">
+                            Documentário
+                        </option>
+
+                        <option value="Anime">
+                            Anime
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- STATUS -->
+
+                <div class="grupo-formulario">
+
+                    <label for="status">
+                        Status:
+                    </label>
+
+                    <select id="status" required>
+
+                        <option value="Quero assistir">
+                            Quero assistir
+                        </option>
+
+                        <option value="Assistindo">
+                            Assistindo
+                        </option>
+
+                        <option value="Concluído">
+                            Concluído
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- DESCRIÇÃO -->
+
+                <div class="grupo-formulario">
+
+                    <label for="descricao">
+                        Descrição:
+                    </label>
+
+                    <textarea
+                        id="descricao"
+                        placeholder="Escreva uma descrição...">
+
+                    </textarea>
+
+                </div>
+
+
+
+                <!-- BOTÃO DE SALVAR -->
+
+                <button
+                    type="submit"
+                    class="botao-salvar">
+
+                    Salvar título
+
+                </button>
+            </form>
+
+        </section>
+    </div>
+
+    <!-- Conecta o arquivo JavaScript -->
+
+    <script src="app16.js"></script>
+
+</body>
+
+</html>
