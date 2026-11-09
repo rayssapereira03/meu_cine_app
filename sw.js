@@ -2,9 +2,9 @@ const NOME_CACHE = 'meu-cine-cache-v1';
 
 // 1. Liste aqui todos os arquivos principais que o seu site precisa para funcionar offline
 const urlsParaCachear = [
-  './index16.html',
-  './style16.css', // Substitua pelo nome do seu arquivo CSS, se tiver
-  './app16.js', // Substitua pelo nome do seu arquivo JS, se tiver
+  './index.html',
+  './style.css', // Substitua pelo nome do seu arquivo CSS, se tiver
+  './app.js', // Substitua pelo nome do seu arquivo JS, se tiver
   './imagens/icon-192x192.png',
   './imagens/icon-512x512.png'
 ];

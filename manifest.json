@@ -2,7 +2,7 @@
   "name": "Meu Cine",
   "short_name": "MeuCine",
   "description": "Organize seus filmes e séries favoritos!",
-  "start_url": "./index16.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#ffffff",
